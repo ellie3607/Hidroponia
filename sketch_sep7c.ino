@@ -12,7 +12,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(RELE, OUTPUT);
   if (!rtc.begin()) {
-    Serial.println("No se ha encontrado el RTC");
+    Serial.println("No s'hi ha trobat el RTC");
     while (1);
   }
 }
