@@ -18,6 +18,19 @@ void setup() {
 }
 
 void loop() {
+  int day = now.day();
+  bool isEvenDay = (day % 2 == 0);
+    if ((now.hour() >= 0 && now.hour() < 6) && isEvenDay) {
+    ledState = true;  // Encender LED
+  } else {
+    ledState = false; // Apagar LED
+  }
+  
+  digitalWrite(ledPin, ledState ? HIGH : LOW);
+
+  // Esperar un segundo antes de volver a verificar
+  delay(1000);
+
   DateTime hora = rtc.now(); // Detecta hora
   delay(2000);
 
