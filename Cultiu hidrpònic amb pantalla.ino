@@ -49,7 +49,7 @@ void loop() {
       oled.setCursor (0,0);
       oled.setTextSize(1);
       oled.print ("Són les 7, toca regar...");
-      delay (12000);
+      delay (180000);
       digitalWrite(RELE, LOW);
       oled.clearDisplay();
       delay (1000);
@@ -70,7 +70,7 @@ void loop() {
       oled.setCursor (0,0);
       oled.setTextSize(1);
       oled.print ("Baixa humitat, toca regar...");
-      delay(12000);
+      delay(180000);
       oled.clearDisplay();
       digitalWrite(RELE, LOW);
       delay (3000);
