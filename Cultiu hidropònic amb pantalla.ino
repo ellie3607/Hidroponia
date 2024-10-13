@@ -32,7 +32,7 @@ void loop() {
 
   // Llegir humitat terra
   int soilMoistureValue = analogRead(SOIL_PIN);
-  float soilMoisturePercent = map(soilMoistureValue, 1023, 0, 0, 100); // de analog a perc
+  float soilMoisturePercent = map(soilMoistureValue, 1023, 0, 0, 100); // de analog a percentatge
 
   // print humitat serial
   Serial.print("Humitat del terra: ");
@@ -49,8 +49,7 @@ void loop() {
       oled.setCursor (0,0);
       oled.setTextSize(1);
       oled.print ("Són les 7, toca regar...");
-      delay (180000);
-      digitalWrite(RELE, LOW);
+      delay (90000);
       oled.clearDisplay();
       delay (1000);
       oled.setTextColor (WHITE);
@@ -60,6 +59,7 @@ void loop() {
       Serial.println("7:00 OFF");
       delay (3000);
       oled.clearDisplay();
+      digitalWrite(RELE, LOW);
       }
     
   // Humitat
@@ -70,9 +70,8 @@ void loop() {
       oled.setCursor (0,0);
       oled.setTextSize(1);
       oled.print ("Baixa humitat, toca regar...");
-      delay(180000);
+      delay(90000);
       oled.clearDisplay();
-      digitalWrite(RELE, LOW);
       delay (3000);
       oled.setTextColor (WHITE);
       oled.setCursor (0,0);
@@ -80,6 +79,7 @@ void loop() {
       oled.print ("Regat acabat!");  
       Serial.println("Reg OFF");
       oled.clearDisplay();
+      digitalWrite(RELE, LOW);
       }
     }
   
